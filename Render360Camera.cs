@@ -19,7 +19,7 @@ public class RenderBytes {
 			System.IO.File.WriteAllBytes(System.IO.Path.Combine(path,name + ".png"), rend);
 			Debug.Log("Frame " + name + " rendering was OK.");
 		} catch(Exception e) {
-			Debug.LogWarning("RenderScene.Render(): Failed to render " + path+name+".png" + " (Reason: " + e.ToString() + ")");
+			Debug.LogWarning("RenderBytes.Render(): Failed to render " + path+name+".png" + " (Reason: " + e.ToString() + ")");
 		}
 	}
 }
@@ -40,7 +40,6 @@ public class Render360Camera : MonoBehaviour {
 	private int fcounter = 0;
 
 	void Start() {
-		cam = Camera.main;
 		if (frames == 0)
 			Debug.Log ("Invalid number of frames");
 		if (renderSize < 1)
